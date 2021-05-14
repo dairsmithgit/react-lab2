@@ -18,6 +18,15 @@ function SocialPosts() {
         <div className="SocialPosts">
             <h1>Thinker Feed </h1>
             <h2>Social media for people with big brains.</h2>
+            <div className="ThoughtButton">
+                <button className="NewThought" onClick={showForm}>New Thought</button>
+            </div>
+            <section className="PostListContainer">
+                {post.map((post, i) => 
+                <PostInList key={i} post={post} />
+                )}
+            </section>
+            {display && <PostForm onSubmit={handleAddPost} /> }
         </div>
     )
 }
