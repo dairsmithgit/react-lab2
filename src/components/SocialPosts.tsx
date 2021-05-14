@@ -14,7 +14,9 @@ function SocialPosts() {
 
     return (
         <div>
-            
+
         </div>
     )
 }
+
+export default SocialPosts;
