@@ -14,6 +14,14 @@ function SocialPosts() {
         { title: "Doctor Visit", thought: "I really need to go to the doctor to have my leg checked."},
     ]);
 
+    function showForm() {
+        setDisplay(true);
+    }
+
+    function handleAddPost(post: Post): void {
+        setNewPost(prevPost => [ ...prevPost, post]);
+    }
+
     return (
         <div className="SocialPosts">
             <h1>Thinker Feed </h1>

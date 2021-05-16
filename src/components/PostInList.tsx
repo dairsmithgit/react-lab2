@@ -2,12 +2,18 @@ import './PostInList.css';
 import { useState } from 'react';
 import Post from '../model/Post';
 
-function PostInList() {
+interface Props {
+    post: Post;
+}
 
+function PostInList({post}: Props) {
 
+    const newPost: string {
+
+    }
 
     return (
-        <div>
+        <div className="PostInList">
 
         </div>
     )

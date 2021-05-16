@@ -4,11 +4,46 @@ import Post from '../model/Post';
 
 function PostForm() {
 
+    // const [ display, setDisplay ] = useState("");
+    const [ title, setTitle ] = useState("");
+    const [ thought, setThought ] = useState("");
+
+    function handleSubmit(e:FormEvent) {
+        e.preventDefault();
+
+        const post: Post = {
+            title: title,
+            thought: thought
+        };
+
+        onSubmit(post);
+    }
+
+    // function closeForm() {
+    //     setDisplay(false);
+        
+    //     onClose();
+    // }
 
 
     return (
-        <div>
-            
+        <div className="PostForm">
+            <form onSubmit={handleSubmit}>
+                {/* <i className="fas fa-times-circle" onClick={classForm}></i> */}
+                <p>
+                    <label>Title<br></br>
+                    <input className="title" type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
+                    </label>
+                </p>
+                <p>
+                    <label>Thought<br></br>
+                    <textarea className="thought" value={thought} onChange={e => setThought(e.target.value)}></textarea>
+                    </label>
+                </p>
+                <p>
+                    <button type="submit">Add Post</button>
+                </p>
+            </form>
         </div>
     )
 }
