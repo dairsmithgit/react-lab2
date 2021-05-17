@@ -8,27 +8,9 @@ function PostForm() {
     const [ title, setTitle ] = useState("");
     const [ thought, setThought ] = useState("");
 
-    function handleSubmit(e:FormEvent) {
-        e.preventDefault();
-
-        const post: Post = {
-            title: title,
-            thought: thought
-        };
-
-        onSubmit(post);
-    }
-
-    // function closeForm() {
-    //     setDisplay(false);
-        
-    //     onClose();
-    // }
-
-
     return (
         <div className="PostForm">
-            <form onSubmit={handleSubmit}>
+            <form>
                 {/* <i className="fas fa-times-circle" onClick={classForm}></i> */}
                 <p>
                     <label>Title<br></br>

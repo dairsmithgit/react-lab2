@@ -14,27 +14,16 @@ function SocialPosts() {
         { title: "Doctor Visit", thought: "I really need to go to the doctor to have my leg checked."},
     ]);
 
-    function showForm() {
-        setDisplay(true);
-    }
-
-    function handleAddPost(post: Post): void {
-        setNewPost(prevPost => [ ...prevPost, post]);
-    }
-
     return (
         <div className="SocialPosts">
             <h1>Thinker Feed </h1>
             <h2>Social media for people with big brains.</h2>
             <div className="ThoughtButton">
-                <button className="NewThought" onClick={showForm}>New Thought</button>
+                <button className="NewThought">New Thought</button>
             </div>
             <section className="PostListContainer">
-                {post.map((post, i) => 
-                <PostInList key={i} post={post} />
-                )}
+
             </section>
-            {display && <PostForm onSubmit={handleAddPost} /> }
         </div>
     )
 }
