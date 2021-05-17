@@ -16,7 +16,7 @@ function SocialPosts() {
 
     return (
         <div className="SocialPosts">
-            <h1>Thinker Feed </h1>
+            <h1 className="HeadingTitle">Thinker Feed </h1>
             <h2>Social media for people with big brains.</h2>
             <div className="ThoughtButton">
                 <button className="NewThought">New Thought</button>

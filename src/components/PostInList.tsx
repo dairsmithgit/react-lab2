@@ -13,8 +13,8 @@ function PostInList({post}: Props) {
 
     return (
         <div className="PostInList">
-            <h2>{title}</h2>
-            <p>{thought}</p>
+            <h2 className="PostListTitle">{title}</h2>
+            <p className="PostListThought">{thought}</p>
         </div>
     )
 }
