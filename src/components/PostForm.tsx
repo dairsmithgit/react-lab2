@@ -11,7 +11,6 @@ function PostForm() {
     return (
         <div className="PostForm">
             <form>
-                {/* <i className="fas fa-times-circle" onClick={classForm}></i> */}
                 <p>
                     <label>Title<br></br>
                     <input className="title" type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
