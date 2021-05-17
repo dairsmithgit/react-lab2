@@ -8,9 +8,13 @@ export interface Props {
 
 function PostInList({post}: Props) {
 
+    const title = post.title;
+    const thought = post.thought;
+
     return (
         <div className="PostInList">
-            
+            <h2>{title}</h2>
+            <p>{thought}</p>
         </div>
     )
 }

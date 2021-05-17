@@ -6,7 +6,7 @@ import PostInList from './PostInList';
 
 function SocialPosts() {
 
-    const [ newPost, setNewPost ] = useState<Post[]>([
+    const [ post, setNewPost ] = useState<Post[]>([
         { title: "Question", thought: "What's the most you've ever lost on a coin toss?"},
         { title: "Mishap", thought: "Aw, man. I shot Marvin in the face."},
         { title: "Goodnight", thought: "In case I don't see ya, good afternoon, good evening and goodnight."},
@@ -22,7 +22,9 @@ function SocialPosts() {
                 <button className="NewThought">New Thought</button>
             </div>
             <section className="PostListContainer">
-
+                {post.map((post, i) =>
+                <PostInList key={i} post={post} />
+                )}
             </section>
         </div>
     )
