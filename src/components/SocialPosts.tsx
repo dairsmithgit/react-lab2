@@ -6,6 +6,8 @@ import PostInList from './PostInList';
 
 function SocialPosts() {
 
+    const [showForm, setShowForm] = useState(false);
+
     const [ post, setNewPost ] = useState<Post[]>([
         { title: "Question", thought: "What's the most you've ever lost on a coin toss?"},
         { title: "Mishap", thought: "Aw, man. I shot Marvin in the face."},
@@ -14,18 +16,24 @@ function SocialPosts() {
         { title: "Doctor Visit", thought: "I really need to go to the doctor to have my leg checked."},
     ]);
 
+    function handleFormSubmit(post: Post): void {
+        console.log(post);
+        setShowForm(false);
+    }
+
     return (
         <div className="SocialPosts">
             <h1 className="HeadingTitle">Thinker Feed </h1>
             <h2>Social media for people with big brains.</h2>
             <div className="ThoughtButton">
-                <button className="NewThought">New Thought</button>
+                <button className="NewThought" onClick={() => setShowForm(true)}>New Thought</button>
             </div>
             <section className="PostListContainer">
                 {post.map((post, i) =>
                 <PostInList key={i} post={post} />
                 )}
             </section>
+            {showForm && <PostForm onFormSubmit={handleFormSubmit}/>}
         </div>
     )
 }

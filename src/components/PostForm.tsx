@@ -1,16 +1,29 @@
 import './PostForm.css';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import Post from '../model/Post';
 
-function PostForm() {
+interface Props {
+    onFormSubmit: ( post: Post) => void
+}
+
+function PostForm({onFormSubmit}: Props) {
 
     // const [ display, setDisplay ] = useState("");
     const [ title, setTitle ] = useState("");
     const [ thought, setThought ] = useState("");
 
+    function handleSubmit(e: FormEvent) {
+        const post = {
+            title: title,
+            thought: thought
+        }
+        e.preventDefault();
+        onFormSubmit(post);
+    }
+
     return (
         <div className="PostForm">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <p>
                     <label>Title<br></br>
                     <input className="title" type="text" value={title} onChange={e => setTitle(e.target.value)}></input>
